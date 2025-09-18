@@ -9,17 +9,18 @@ Barcha ma’lumotlar **JSON** faylga saqlanadi va tranzaksiyalarni **CSV** faylg
 ---
 ## 📋 Menu
 ```
-=== STORE MANAGEMENT MENU ===
-1. Add Product
-2. View Products
-3. Edit Product
-4. Delete Product
-5. Record Sale
-6. Record Purchase
-7. View Transactions
-8. Summary Report
-9. Export Transactions to CSV
-0. Exit
+=== DO'KON BOSHQARUV ===
+
+ 1. Mahsulot qo'shish
+ 2. Mahsulotlarni ko'rish
+ 3. Mahsulotni tahrirlash
+ 4. Mahsulot o'chirish
+ 5. Sotuv (kirim)
+ 6. Xarid (chiqim / zaxiraga qo'shish)
+ 7. Tranzaksiyalarni ko'rish
+ 8. Hisobot (jami)
+ 9. Tranzaksiyalarni CSV ga eksport
+ 0. Chiqish
 ```
 
 ---
