@@ -1,6 +1,6 @@
 from rich.console import Console
 from rich.table import Table
-from app.IsValid import is_valid_product
+# TODO: from app.IsValid import is_valid_product
 
 console = Console()
 
@@ -17,7 +17,7 @@ def add_product(products: list) -> None:
         - Qo'shish muvaffaqiyati yoki xatolik haqida qaytaradi yoki log qiladi.
     """
     
-    getProductCode = input("Mahsulot code: ").strip()
+    getProductCode = int(input("Mahsulot code: ").strip())
     
     for getCode in products:
         if int(getProductCode) == getCode[0]:
@@ -25,19 +25,23 @@ def add_product(products: list) -> None:
             return
 
     getProductName = input("Mahsulot Nomi: ")
-    getProductPrice = input("Mahsulot Narxi: ")
-    getProductQuantity = input("Mahsulot Miqdori: ")
-      
+    getProductPrice = float(input("Mahsulot Narxi: "))
+    getProductQuantity = float(input("Mahsulot Miqdori: "))
 
-    if is_valid_product([getProductCode,getProductName, getProductPrice, getProductQuantity]):
-        products.append([getProductCode,getProductName, float(getProductPrice), float(getProductQuantity)])
-        console.print("Mahsulot Qo'shildi!", style="bold green")
-    else:
-        console.print("Siz notogri mahsulot Kiritdingiz", style="bold red")
 
-        if not getProductName.isalpha():
-            console.print("Iltimos mahsulot nomini harf korinishda yozin: Sut", style="yellow")
-        if not getProductPrice.isdigit():
-            console.print(f"Iltimos mahsulot narxini raqam korinishda yozin: {12_000}", style="yellow")
-        if not getProductQuantity.isdigit():
-            console.print(f"Iltimos mahsulot miqdorini raqam korinishda yozin (Dona/kg): {12}", style="yellow")
+    products.append([getProductCode,getProductName, float(getProductPrice), float(getProductQuantity)])
+    console.print("Mahsulot Qo'shildi!", style="bold green")
+
+    ## TODO: Keyinchalik korib chiqiladi
+    # if is_valid_product([getProductCode,getProductName, getProductPrice, getProductQuantity]):
+    #     products.append([getProductCode,getProductName, float(getProductPrice), float(getProductQuantity)])
+    #     console.print("Mahsulot Qo'shildi!", style="bold green")
+    # else:
+    #     console.print("Siz notogri mahsulot Kiritdingiz", style="bold red")
+
+    #     if not getProductName.isalpha():
+    #         console.print("Iltimos mahsulot nomini harf korinishda yozin: Sut", style="yellow")
+    #     if not getProductPrice.isdigit():
+    #         console.print(f"Iltimos mahsulot narxini raqam korinishda yozin: {12_000}", style="yellow")
+    #     if not getProductQuantity.isdigit():
+    #         console.print(f"Iltimos mahsulot miqdorini raqam korinishda yozin (Dona/kg): {12}", style="yellow")
