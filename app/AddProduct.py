@@ -20,7 +20,7 @@ def add_product(products: list) -> None:
     getProductCode = int(input("Mahsulot code: ").strip())
     
     for getCode in products:
-        if int(getProductCode) == getCode[0]:
+        if int(getProductCode) == int(list(getCode.keys())[0]):
             console.print("Bunday kodda mahsulot mavjud.", style="bold red")
             return
 
@@ -29,7 +29,7 @@ def add_product(products: list) -> None:
     getProductQuantity = float(input("Mahsulot Miqdori: "))
 
 
-    products.append([getProductCode,getProductName, float(getProductPrice), float(getProductQuantity)])
+    products.append({getProductCode:[getProductName, float(getProductPrice), float(getProductQuantity)]})
     console.print("Mahsulot Qo'shildi!", style="bold green")
 
     ## TODO: Keyinchalik korib chiqiladi

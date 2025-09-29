@@ -9,6 +9,7 @@ from app.ViewTransactions import view_transactions
 from app.ReportTotal import report_total
 from app.ExportTransactionsCSV import export_transactions_csv
 
+# from typing import Dict, List, Union
 import sys
 
 
@@ -22,11 +23,10 @@ def main() -> None:
         - 0 ni tanlasa, `exit_app()` funksiyasini chaqiradi va dasturdan chiqadi.
         - Noto'g'ri tanlovda ogohlantirish chiqaradi.
     """
-    pass
-
-    products: list[list[int, str, int, int]] = [
-        [1221, "Sut", 12121342, 23234123],
-        [1222, "limon", 12000, 1]
+    
+    products: list[ { int, [str, float, float] } ] = [
+        {12: ["Sut", 12121342, 2]},
+        {21: ["limon", 12000, 1]}
     ]
 
     while True:

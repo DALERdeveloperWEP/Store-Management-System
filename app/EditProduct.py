@@ -1,4 +1,9 @@
-def edit_product(products: list, product_id) -> None:
+from rich.console import Console
+
+console = Console()
+
+
+def edit_product(products: list) -> None:
     """Mahsulotni tahrirlash.
 
     Args:
@@ -10,5 +15,17 @@ def edit_product(products: list, product_id) -> None:
         - Foydalanuvchidan yangilanish kerak bo'lgan maydonlarni oladi va o'zgartiradi.
         - O'zgartirish muvaffaqiyati/hatolik xabarini beradi.
     """
-    if products:
-        pass
+    getProductCode = int(input("Mahsulot kodini kiring: "))
+    for index, getCode in enumerate(products, start=0):
+        if str(getProductCode) not in getCode:
+            console.print("Bunday kodda mahsulot mavjud emas.", style="bold red")
+            return
+        else:
+            getProductName = input("Mahsulot Nomi: ")
+            getProductPrice = float(input("Mahsulot Narxi: "))
+            getProductQuantity = float(input("Mahsulot Miqdori: "))
+
+            products.append({ getProductCode: [getProductName, float(getProductPrice), float(getProductQuantity)]})
+            console.print("Mahsulot Qo'shildi!", style="bold green")
+
+    

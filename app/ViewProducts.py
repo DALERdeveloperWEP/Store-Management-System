@@ -19,9 +19,10 @@ def view_products(products: list) -> None:
     product_table.add_column("№", style="blue")
     product_table.add_column("Mahsulot code", style="green", justify="center")
     product_table.add_column("Nomi", style="yellow")
-    product_table.add_column("Narxi", style="grey100")
+    product_table.add_column("Narxi", style="grey100", justify="center")
     product_table.add_column("Miqdori (Dona/Kg)", style="grey100", justify="right")
 
     for index, l in enumerate(products, start=1):
-        product_table.add_row(str(index), str(l[0]), l[1], str(l[2]), str(l[3]))
+        item = list(l.items())
+        product_table.add_row(str(index), str(item[0][0]), l[item[0][0]][0], str(l[item[0][0]][1]), str(l[item[0][0]][2]))
     console.print(product_table)
